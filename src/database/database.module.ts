@@ -10,7 +10,12 @@ import { TypeOrmModule } from '@nestjs/typeorm';
         "password": "plutta",
         "database": "blog",
         "entities": ["dist/**/*.entity{.ts,.js}"],
-        "synchronize": true
+        "synchronize": true,
+        "migrations": [
+            "src/migration/**/*.ts"
+        ],
+        logging: true,
+        logger: 'advanced-console'
     })]
 })
 export class DatabaseModule {}
